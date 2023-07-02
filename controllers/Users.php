@@ -13,9 +13,9 @@ class Users{
         $this->Pwd = trim($_POST['usersPwd']);
         $check = $this->userModel->checklogin($this->user,$this->Pwd);
         if($check){
-            $this->redirect('../home_page.php');
+            $this->redirect('../view/home_page.php');
         }else{
-            $this->redirect('../login.php');
+            $this->redirect('../view/login.php');
         }
     }
     public function redirect($location){
@@ -23,7 +23,7 @@ class Users{
     }
     public function logout(){
         unset($_SESSION['name']);
-        $this->redirect('../login.php');
+        $this->redirect('../view/login.php');
     }
 }
 $init = new Users();

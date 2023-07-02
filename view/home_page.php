@@ -1,9 +1,6 @@
 <?php
 session_start();
-if(empty($_SESSION['name'])){
-    header('location:login.php');
-    exit();
-}
+require_once '../controllers/SessionController.php';
 include_once 'header.php';
 ?>
 <?php
@@ -16,7 +13,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 ?>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script src="/js/reload.js"></script>
+<script src="../js/reload.js"></script>
 </head>
 <?php
     include_once 'footer.php'

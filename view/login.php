@@ -1,15 +1,12 @@
 <?php
 session_start();
-if(!empty($_SESSION['name'])){
-    header('location:home_page.php');
-    exit();
-}
+include_once '../controllers/SessionController.php';
 include_once 'header.php';
 ?>
     <h1 class="header">Please Login</h1>
 
 
-    <form method="post" action="./controllers/Users.php">
+    <form method="post" action="../controllers/Users.php">
         <input type="text" name="name"  
         placeholder="Username...">
         <input type="password" name="usersPwd" 
