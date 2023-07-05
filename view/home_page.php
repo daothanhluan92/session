@@ -1,13 +1,16 @@
 <?php
-session_start();
-require_once '../controllers/SessionController.php';
+include_once '../controllers/SessionController.php';
+$init->createSession();
+if($init->checkValidSession('name')==false){
+    header('location:login.php');
+    exit();
+}
 include_once 'header.php';
 ?>
 <?php
 echo '<h1 id="index-text">'."Welcome".'</h1>';
-if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {
-        session_unset();
-        session_destroy();
+if ($init->checkValidSession('LAST_ACTIVITY') && (time() - $_SESSION['LAST_ACTIVITY'] > 300)) {
+    $init->deleteSession('name');
     }
     $_SESSION['LAST_ACTIVITY'] = time();
 ?>

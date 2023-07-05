@@ -11,7 +11,7 @@
     <nav>
         <ul>
             <a href="home_page.php"><li>Home</li></a>
-            <?php if(!empty($_SESSION['name'])) : ?>
+            <?php if($init->checkValidSession('name')) : ?>
                 <a href="../controllers/Users.php?q=logout"><li>Logout</li></a>
             <?php endif; ?>
         </ul>

@@ -1,6 +1,10 @@
 <?php
-session_start();
 include_once '../controllers/SessionController.php';
+$init->createSession();
+if($init->checkValidSession('name')){
+    header('location:home_page.php');
+    exit();
+}
 include_once 'header.php';
 ?>
     <h1 class="header">Please Login</h1>

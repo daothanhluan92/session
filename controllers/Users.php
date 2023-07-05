@@ -1,11 +1,15 @@
-<?php require_once '../model/User.php'; ?>
+<?php include_once '../model/User.php'; 
+include_once '../controllers/SessionController.php';
+?>
 <?php
 class Users{
     private $user;
     private $Pwd;
     private $userModel;
+    private $session;
     public function __construct()
     {
+        $this->session =  new SessionController;
         $this->userModel = new User;
     }
     public function login(){
@@ -22,7 +26,7 @@ class Users{
         header('location:'.$location);
     }
     public function logout(){
-        unset($_SESSION['name']);
+        $this->session->deleteSession('name');
         $this->redirect('../view/login.php');
     }
 }
