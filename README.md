@@ -1,14 +1,14 @@
 # Xây dựng hệ thống đăng nhập, đăng xuất.
 
 ---
-> ##Tổng quan
+##Tổng quan
 
 ---
 Xây dựng các tính năng cơ bản như đăng nhập, đăng xuất trên website bằng cách sử dụng ngôn
 ngữ lập trình php.
 
 
-> ##Nội dung 
+##Nội dung 
 
 ---
 
@@ -16,7 +16,7 @@ ngữ lập trình php.
 * Xác thực người dùng khi đăng nhập.
 * Sử dụng SESSION để tạo hiệu lực phiên.
 
-> ##Yêu cầu
+##Yêu cầu
 
 ---
 * Biết cách sử dụng các ngôn ngữ lập trình như html,
